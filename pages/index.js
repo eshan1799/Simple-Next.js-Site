@@ -19,9 +19,9 @@ export default function Home() {
             <h1 className="text-4xl lg:text-6xl text-left pb-9 font-bold">
               Invoices that get you paid on time.
             </h1>
-            <a href="#" className="self-start border-2 p-2 rounded-sm bg-opacity-100">
+            <a href="#" className={styles.bgwhite} className="self-start border-2 p-2 rounded-sm">
               <p>Send better invoices now
-                <span clasName="arrow">
+                <span clasName={styles.arrow}>
                   <i className="fas fa-arrow-right"></i>
                   <i class="bi bi-arrow-right"></i>
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
