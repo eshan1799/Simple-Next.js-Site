@@ -1,14 +1,44 @@
 .row {
     display: flex;
     flex-direction: row;
-    align-items: left;
-    justify-content: left;
-    padding: 5rem 5rem;
+    align-items: center;
+    justify-content: center;
     color: black;
-    min-height: 100vh;
+    padding-top: 40px;
   }
 
 .grid {
-display: flex;
-flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: flex-start;
 }
+
+.gridCenter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.formInput {
+    display: block;
+    background-color: #F5F5F7;
+    height: 35px;
+    margin: 10px 0px;
+    padding: 20px 15px;
+    color: black;
+    border-radius: 2px;
+}
+
+.formSubmit {
+    display: block;
+    background-color: #ED6376;
+    margin: 10px 0px;
+    padding: 20px 15px;
+    color: white;
+    border-radius: 2px;
+    text-align: center;
+}
+
+.formSubmit:hover { cursor: pointer; }
