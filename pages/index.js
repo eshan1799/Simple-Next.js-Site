@@ -12,6 +12,10 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+        <nav className="py-8 bg-white">
+          <a href="/">Invoicing</a>
+          <a href="/savingscalculator">Savings Calculator</a>
+        </nav>
         <div className={styles.row}>
           <div className={styles.grid}>
             <h1 className="text-4xl lg:text-6xl text-left pb-9 font-bold">
