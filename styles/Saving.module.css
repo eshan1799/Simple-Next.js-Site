@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: center;
     color: black;
+    padding: 0 40px;
     padding-top: 40px;
   }
 
@@ -42,3 +43,10 @@
 }
 
 .formSubmit:hover { cursor: pointer; }
+
+@media (max-width: 600px) {
+    .row {
+      width: 100%;
+      flex-direction: column;
+    }
+  }
