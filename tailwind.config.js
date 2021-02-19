@@ -6,6 +6,9 @@ module.exports = {
   darkMode: false,
   theme: {
     extend: {},
+      colors: {
+        purple: '#7A539F'
+      }
   },
   variants: {
     extend: {},
