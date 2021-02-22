@@ -4,9 +4,19 @@ import styles from '../styles/Saving.module.css'
 import React, { useState } from 'react'
 
 export default function SavingsCalculator() {
-    function calc() {
-        console.log("yo")
+    const [state, setState] = useState({
+        monthlyPrice: 0,
+        employeeCount: 0
+    })
+
+    const handleChange = (e) => {
+        const { name, value } = e.target
+        setState( prevState => ({
+            ...prevState,
+            [name] : value
+        }))
     }
+
     return (
         <>
             <Head>
@@ -20,11 +30,11 @@ export default function SavingsCalculator() {
                     Savings Calculator
                 </h1>
                         <form className={styles.grid}>
-                            <label htmlFor="monthlyPrice">How much do you currently pay your accountant per month?</label>
-                            <input onChange={calc} type="number" id="monthlyPrice" className={styles.formInput}>
+                            <label htmlFor="monthlyPrice">How much do you currently pay your accountant per month? (£)</label>
+                            <input onChange={ handleChange } type="number" name="monthlyPrice" className={styles.formInput}>
                             </input>
                             <label htmlFor="employeeCount">How many employees do you have?</label>
-                            <input type="number" id="employeeCount" className={styles.formInput}>
+                            <input onChange={ handleChange} type="number" name="employeeCount" className={styles.formInput}>
                             </input>
                             <input type="submit" className={styles.formSubmit} value="Find out how much I'll save">
                             </input>
