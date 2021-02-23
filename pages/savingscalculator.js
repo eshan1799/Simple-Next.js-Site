@@ -20,15 +20,14 @@ export default function SavingsCalculator() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        const emberPricing = {
-            monthly: 39,
-            perEmployee: 4
-        }
-        const calcSavings = state.monthlyCost - (emberPricing.monthly + (emberPricing.perEmployee * state.employeeCount))
-        console.log(calcSavings)
-        setState({ moneySaved: calcSavings })
+        fetch(`http://localhost:3000/api/calculation?monthlyCost=${ state.monthlyCost }&employeeCount=${ state.employeeCount }`)
+        .then(res => res.json())
+        .then((data) => {
+            setState({ moneySaved: data.moneySaved })
+        })
+        .catch(console.log())
         e.target.monthlyCost.value = ""
-        e.target.employeeCount.value = ""
+        e.target.employeeCount.value = ""    
     }
 
     return (
@@ -43,7 +42,10 @@ export default function SavingsCalculator() {
                         <h1 className="text-2xl lg:text-5xl pb-20 font-bold">
                     Savings Calculator
                 </h1>
-                        <form onSubmit={ handleSubmit } className={styles.grid}>
+                        <form
+                            onSubmit={ handleSubmit }
+                            className={styles.grid}
+                        >
                             <label htmlFor="monthlyCost">How much do you currently pay your accountant per month? (£)</label>
                             <input
                                 onChange={ handleChange }
