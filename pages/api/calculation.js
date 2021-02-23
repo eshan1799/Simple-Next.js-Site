@@ -1,7 +1,11 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-
-export default function retrieve(req, res) {
+export default function calculate(req, res) {
   if (req.method === 'GET') {
-    res.status(200).json({ details:"red" })
+    const { query } = req
+    const emberPricing = {
+      monthly: 39,
+      perEmployee: 4
+    }
+    const calcSavings = query.monthlyCost - (emberPricing.monthly + (emberPricing.perEmployee * query.employeeCount))
+    res.status(200).json({ moneySaved: calcSavings })
   }
 }
