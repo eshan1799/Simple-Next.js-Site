@@ -17,10 +17,6 @@
   min-height: 100vh;
 }
 
-.bgwhite {
-  background-color: white;
-}
-
 @media (max-width: 600px) {
   .row {
     width: 100%;
