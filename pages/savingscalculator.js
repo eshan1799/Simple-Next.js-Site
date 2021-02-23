@@ -20,7 +20,7 @@ export default function SavingsCalculator() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        fetch(`https://simple-next-js-site.vercel.app/savingscalculator?monthlyCost=${ state.monthlyCost }&employeeCount=${ state.employeeCount }`)
+        fetch(`https://simple-next-js-site.vercel.app/api/calculation?monthlyCost=${ state.monthlyCost }&employeeCount=${ state.employeeCount }`)
         .then(res => res.json())
         .then((data) => {
             setState({ moneySaved: data.moneySaved })
