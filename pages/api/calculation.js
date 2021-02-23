@@ -5,7 +5,7 @@ export default function calculate(req, res) {
       monthly: 39,
       perEmployee: 4
     }
-    const calcSavings = query.monthlyCost - (emberPricing.monthly + (emberPricing.perEmployee * query.employeeCount))
+    const calcSavings = (query.monthlyCost - (emberPricing.monthly + (emberPricing.perEmployee * query.employeeCount))) * 12
     res.status(200).json({ moneySaved: calcSavings })
   }
 }
